@@ -2,15 +2,18 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="275dp"
+    android:background="@color/white"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="10dp"
+        android:background="@color/white"
         android:layout_margin="2dp"
         app:cardCornerRadius="5dp"
         android:elevation="5dp"
+        app:cardBackgroundColor="@color/white"
         android:id="@+id/newsCV">
 
         <LinearLayout
@@ -22,6 +25,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:id="@+id/mainheading"
+                android:background="@color/white"
                 android:padding="5dp"
                 android:ellipsize="end"
                 android:maxLines="2"
@@ -33,6 +37,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="130dp"
+                android:background="@color/white"
                 android:layout_marginTop="10dp"
                 android:orientation="horizontal">
 
@@ -41,14 +46,17 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:ellipsize="end"
+                    android:background="@color/white"
                     android:maxLines="6"
                     android:padding="5dp"
                     android:id="@+id/content"
                     android:textSize="15sp"
+                    android:textColor="@color/black"
                     android:text="Secondary Heeading"/>
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:background="@color/white"
                     android:padding="5dp"
                     android:layout_weight="1"
                     android:scaleType="centerCrop"
@@ -61,6 +69,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="13sp"
+                android:background="@color/white"
                 android:textStyle="italic"
                 android:id="@+id/author"
                 android:textColor="@color/black"
@@ -73,6 +82,7 @@
                 android:textColor="@color/black"
                 android:textStyle="bold"
                 android:id="@+id/newsText"
+                android:background="@color/white"
                 android:text="20-12-2002"
                 android:textSize="12sp"/>
 

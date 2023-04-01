@@ -3,7 +3,10 @@ package com.example.dailyhunt;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager2.widget.ViewPager2;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.widget.Toast;
 
 import com.google.android.material.tabs.TabLayout;
@@ -22,6 +25,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        SharedPreferences prefs = getSharedPreferences("prefs", MODE_PRIVATE );
+        boolean firstStart = prefs.getBoolean("firstStart", true);
+
+        if(firstStart){
+            introActivity();
+        }
+
         viewPager2 = findViewById(R.id.view_pager);
         tabLayout = findViewById(R.id.include);
 
@@ -29,5 +39,17 @@ public class MainActivity extends AppCompatActivity {
         viewPager2.setAdapter(fragmentAdapter);
 
         new TabLayoutMediator(tabLayout,viewPager2,((tab, position) -> tab.setText(titles[position]))).attach();
+
     }
+
+    private void introActivity(){
+        Intent intent = new Intent(MainActivity.this,IntroActivity.class);
+        startActivity(intent);
+
+        SharedPreferences prefs =  getSharedPreferences("prefs",MODE_PRIVATE);
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putBoolean("firstStart",false);
+        editor.apply();
+    }
+
 }

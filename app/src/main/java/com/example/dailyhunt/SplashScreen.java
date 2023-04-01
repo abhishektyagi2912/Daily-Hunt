@@ -2,11 +2,13 @@ package com.example.dailyhunt;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import com.airbnb.lottie.LottieAnimationView;
 
+@SuppressLint("CustomSplashScreen")
 public class SplashScreen extends AppCompatActivity {
 
     LottieAnimationView lottieAnimationView;
@@ -19,13 +21,10 @@ public class SplashScreen extends AppCompatActivity {
 
         lottieAnimationView = findViewById(R.id.lottie);
 
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                Intent intent = new Intent(SplashScreen.this,MainActivity.class);
-                startActivity(intent);
-                finish();
-            }
+        new Handler().postDelayed(() -> {
+            Intent intent = new Intent(SplashScreen.this,MainActivity.class);
+            startActivity(intent);
+            finish();
         }, 3000);
     }
 }

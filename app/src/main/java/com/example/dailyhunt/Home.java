@@ -12,6 +12,7 @@ import android.widget.Toast;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.facebook.shimmer.ShimmerFrameLayout;
 
@@ -27,6 +28,7 @@ public class Home extends Fragment {
     ArrayList<ModelClass> modelClassArrayList;
     Adapter adapter;
     ShimmerFrameLayout shimmerFrameLayout;
+    SwipeRefreshLayout swipeRefreshLayout;
     RecyclerView recyclerViewHome;
 
     @Override
@@ -37,12 +39,22 @@ public class Home extends Fragment {
 
         recyclerViewHome = v.findViewById(R.id.rv_home);
         shimmerFrameLayout = v.findViewById(R.id.shimmer1);
+        swipeRefreshLayout = v.findViewById(R.id.swipeLayout);
         shimmerFrameLayout.startShimmer();
         modelClassArrayList = new ArrayList<>();
 
         recyclerViewHome.setLayoutManager(new LinearLayoutManager(getContext()));
         adapter = new Adapter(getContext(),modelClassArrayList);
         recyclerViewHome.setAdapter(adapter);
+
+
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                findNews();
+                swipeRefreshLayout.setRefreshing(false);
+            }
+        });
 
         findNews();
         return v;

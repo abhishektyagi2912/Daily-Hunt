@@ -21,7 +21,7 @@ This project is a news app that fetches the latest news articles from the News O
 To use this project, you will need to have Android Studio installed on your machine. From the command line, run:
 
  ```
- git clone https://github.com/yourusername/news-app.git
+ git clone https://github.com/abhishektyagi2912/Daily-Hunt-News-App.git
 
  ```
 

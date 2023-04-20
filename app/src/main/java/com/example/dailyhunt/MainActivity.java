@@ -9,10 +9,15 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 
 public class MainActivity extends AppCompatActivity {
+
+    AdView adView;
 
     FragmentAdapter fragmentAdapter;
     TabLayout tabLayout;
@@ -25,6 +30,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // ads
+        adView = findViewById(R.id.adview);
+        MobileAds.initialize(this);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        adView.loadAd(adRequest);
+
+        // ads end
         SharedPreferences prefs = getSharedPreferences("prefs", MODE_PRIVATE );
         boolean firstStart = prefs.getBoolean("firstStart", true);
 

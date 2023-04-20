@@ -16,7 +16,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/daily_hunt"
-            android:textColor="#039BE5"
+            android:textColor="@color/purple_500"
             android:textSize="20sp"
             android:textStyle="bold"/>
     </Toolbar>
@@ -28,10 +28,10 @@
         android:layout_below="@+id/toolbar"
         android:layout_marginTop="0dp"
         android:backgroundTint="@color/white"
-        app:tabIndicatorColor="#03A9F4"
+        app:tabIndicatorColor="@color/purple_500"
         app:tabIndicatorHeight="3.5dp"
         app:tabMode="scrollable"
-        app:tabSelectedTextColor="#03A9F4"
+        app:tabSelectedTextColor="@color/purple_500"
         app:tabTextColor="#618CBF"
         tools:ignore="SpeakableTextPresentCheck">
 
@@ -39,12 +39,19 @@
 
 
     <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/view_pager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/include"
         android:layout_marginTop="1dp"
-        android:id="@+id/view_pager"
         android:background="@color/white">
 
     </androidx.viewpager2.widget.ViewPager2>
+    <com.google.android.gms.ads.AdView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/adview"
+        app:adSize = "BANNER"
+        app:adUnitId="@string/banner_unit_id"
+        android:layout_alignParentBottom="true"/>
 </RelativeLayout>

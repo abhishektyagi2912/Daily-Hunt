@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Daily Hunt</string>
+    <string name="app_name">NewsSift</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="home">Home</string>
     <string name="sports">Sports</string>
@@ -7,6 +7,8 @@
     <string name="science">Science</string>
     <string name="movies">Movies</string>
     <string name="technology">Technology</string>
-    <string name="daily_hunt">Daily Hunt</string>
-    <string name="daily_hunt_specific_news"><![CDATA[Daily Hunt -> Specific News]]></string>
+    <string name="daily_hunt">NewsSift</string>
+    <string name="app_id">ca-app-pub-9094187635687395~6215721615</string>
+    <string name="banner_unit_id">ca-app-pub-9094187635687395/8737943171</string>
+    <string name="daily_hunt_specific_news"><![CDATA[NewsSift -> Specific News]]></string>
 </resources>
